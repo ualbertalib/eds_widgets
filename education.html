@@ -1,0 +1,77 @@
+<!-- EBSCOhost Custom Search Box Begins -->
+<script src="http://support.ebscohost.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script>
+<style type="text/css">
+		.choose-db-list{ list-style-type:none;padding:0;margin:10px 0 0 0;font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt;width:{{selectedInterface().layout.width()}}px; }
+		.choose-db-check{ width:20px;float:left;padding-left:5px;padding-top:5px; }
+		.choose-db-detail{ margin-left:30px;border-left:solid 1px #E7E7E7;padding:5px 11px 7px 11px;line-height:1.4em; }
+		.summary { background-color:#1D5DA7;color:#FFFFFF;border:solid 1px #1D5DA7; }
+		.one { background-color: #FFFFFF;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		.two { background-color: #F5F5F5;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		.selected { background-color: #E0EFF7;border:solid 1px #E7E7E7;border-top:solid 1px #FFFFFF; }
+		#ebscohostCustomSearchBox #disciplineBlock { width:auto; }
+		#ebscohostCustomSearchBox .limiter { float:left;margin:0;padding:0;width:50%; }
+	</style>
+	<form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post" style="width:340px; overflow:auto;">
+		<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1" />
+		<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="http://login.ezproxy.library.ualberta.ca/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&type=0&mode=bool&lang=en" />
+		<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db" />
+		<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+" />
+		<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="" />
+		<div style="background-image:url('http://support.ebscohost.com/eit/images/buttons/eds100.gif'); background-repeat:no-repeat; height:50px; width:340px; font-family:Verdana,Arial,Helvetica,sans-serif;font-size:9pt; color:#353535;">
+			<div style="padding-top:5px;padding-left:115px;">
+				<span style="font-weight:bold;">Search the Library</span>
+
+				<div>
+					<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="23" style="font-size:9pt;padding-left:5px;margin-left:0px;" />
+					<input type="submit" value="Search" style="font-size:9pt;padding-left:5px;" />
+					
+					<div id="guidedFieldSelectors">
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked" />
+						<label class="label" for="guidedField_0"> Keyword</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI" />
+						<label class="label" for="guidedField_1"> Title</label>
+						<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU" />
+						<label class="label" for="guidedField_2"> Author</label>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div id="limiterblock" style="margin-left:-px; overflow: auto;">
+			<div id="limitertitle" style="font-weight:bold;padding-top:25px;padding-bottom:5px;">Limit Your Results</div>
+			
+			<div class="limiter" style="display:none;">
+				<input type="checkbox" id="chkFullText" name="chkFullText"  />
+				<label for="chkFullText">Full Text</label>
+			</div>
+			
+			<div class="limiter" style="display:none;">
+				<input type="checkbox" id="chkLibraryCollection" name="chkLibraryCollection"  />
+				<label for="chkLibraryCollection">Available in Library Collection</label>
+			</div>
+			
+			<div class="limiter" style="display:none;">
+				<input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed"  />
+				<label for="chkPeerReviewed">Peer Reviewed</label>
+			</div>
+			
+			<div class="limiter" style="display:none;">
+				<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly"  />
+				<label for="chkCatalogOnly">Catalog Only</label>
+			</div>
+			
+		</div>
+
+		
+		<div id="disciplineBlock" style="margin-left:-px; overflow: auto;">
+			<div style="font-weight:bold;padding-top:25px;padding-bottom:5px;">Disciplines</div>
+			<select multiple="multiple">
+				<option selected="selected" value="">Select Disciplines (optional)</option>
+				<option value="APPL"  style="display:none;">Applied Sciences</option><option value="COMP"  style="display:none;">Computer Science</option><option value="EART"  style="display:none;">Earth & Atmospheric Sciences</option><option value="GEOL"  style="display:none;">Geology</option><option value="LITE"  style="display:none;">Literature & Writing</option><option value="MATH"  style="display:none;">Mathematics</option><option value="POWE"  style="display:none;">Power & Energy</option><option value="SSHU"  style="display:none;">Social Sciences & Humanities</option><option value="AERO"  style="display:none;">Aerospace Sciences</option><option value="COHE"  style="display:none;">Consumer Health</option><option value="COMM"  style="display:none;">Communication & Mass Media</option><option value="DRAM"  style="display:none;">Drama & Theater Arts</option><option value="FILM"  style="display:none;">Film</option><option value="HIST"  style="display:none;">History</option><option value="LIFE"  style="display:none;">Life Sciences</option><option value="MARK"  style="display:none;">Marketing</option><option value="MILI"  style="display:none;">Military History & Science</option><option value="NURS"  style="display:none;">Nursing & Allied Health</option><option value="PHYT"  style="display:none;">Physical Therapy</option><option value="SOCY"  style="display:none;">Sociology</option><option value="ZOOL"  style="display:none;">Zoology</option><option value="EDUC"  >Education</option><option value="AGRI"  style="display:none;">Agriculture & Agribusiness</option><option value="BIOG"  style="display:none;">Biography</option><option value="DIPL"  style="display:none;">Diplomacy & International Relations</option><option value="GEOG"  style="display:none;">Geography & Cartography</option><option value="HEAL"  style="display:none;">Health & Medicine</option><option value="VISU"  style="display:none;">Visual Arts</option><option value="ARTS"  style="display:none;">Arts & Entertainment</option><option value="BIOL"  style="display:none;">Biology</option><option value="BUSI"  style="display:none;">Business & Management</option><option value="ENGI"  style="display:none;">Engineering</option><option value="LANG"  style="display:none;">Language & Linguistics</option><option value="LIBR"  style="display:none;">Library & Information Science</option><option value="MUSI"  style="display:none;">Music</option><option value="OCEA"  style="display:none;">Oceanography</option><option value="SPLS"  style="display:none;">Sports & Leisure</option><option value="TECH"  style="display:none;">Technology</option><option value="ANTH"  style="display:none;">Anthropology</option><option value="DENT"  style="display:none;">Dentistry</option><option value="ECON"  style="display:none;">Economics</option><option value="ENVI"  style="display:none;">Environmental Sciences</option><option value="FORE"  style="display:none;">Forests & Forestry</option><option value="INFO"  style="display:none;">Information Technology</option><option value="MINI"  style="display:none;">Mining & Mineral Resources</option><option value="PSYC"  style="display:none;">Psychology</option><option value="SOWO"  style="display:none;">Social Work</option><option value="SPME"  style="display:none;">Sports Medicine</option><option value="BIOT"  style="display:none;">Biotechnology</option><option value="BOTA"  style="display:none;">Botany</option><option value="LAWX"  style="display:none;">Law</option><option value="PHAR"  style="display:none;">Pharmacy & Pharmacology</option><option value="PHYS"  style="display:none;">Physics</option><option value="POGV"  style="display:none;">Politics & Government</option><option value="PUBL"  style="display:none;">Public Health</option><option value="VETM"  style="display:none;">Veterinary Medicine</option><option value="ARCH"  style="display:none;">Architecture</option><option value="CALM"  style="display:none;">Complementary & Alternative Medicine</option><option value="CHEM"  style="display:none;">Chemistry</option><option value="CONS"  style="display:none;">Construction & Building</option><option value="DANC"  style="display:none;">Dance</option><option value="ETHN"  style="display:none;">Ethnic & Cultural Studies</option><option value="NUTR"  style="display:none;">Nutrition & Dietetics</option><option value="RELI"  style="display:none;">Religion & Philosophy</option><option value="SCIE"  style="display:none;">Science</option><option value="WOFE"  style="display:none;">Women's Studies & Feminism</option>
+			</select>
+		</div>
+		
+
+		
+	</form>
+	<!-- EBSCOhost Custom Search Box Ends -->
